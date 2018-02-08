@@ -1,19 +1,21 @@
-.sticky-end {
-    width: 100%;
-    height: 100%;
-    display: table;
-    table-layout: fixed;
-    line-height: normal;
-}
+@if get-setting($tipicss, 'objects', 'sticky-end') {
+    .sticky-end {
+        width: 100%;
+        height: 100%;
+        display: table;
+        table-layout: fixed;
+        line-height: normal;
+    }
 
-.sticky-end__footer,
-.sticky-end__header {
-    display: table-row;
-    height: 1px;
-    line-height: normal;
-}
+    .sticky-end__footer,
+    .sticky-end__header {
+        display: table-row;
+        height: 1px;
+        line-height: normal;
+    }
 
-.sticky-end__body {
-    display: table-row;
-    height: 100%;
+    .sticky-end__body {
+        display: table-row;
+        height: 100%;
+    }
 }

@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/// Generate reset classes for each viewport, i.e. smartphone, phablet etc..
+///
+/// @param { List } $combined-models
+///     List to iterate from
+
+@mixin combined-resets(
+    $list: $combined-models
+) {
+    @if $combined-models {
+
+        @each $viewport, $list in $viewports {
+            @include breakpoint(
+                $min-width: map-get($list, 'min-width'),
+                $max-width: map-get($list, 'max-width')
+            ) {
+                .combined.combined--reset-#{$viewport} {
+                    &,
+                    & > .combined__body,
+                    & > .combined__aside {
+                        display: block;
+                        width: auto;
+                        height: auto;
+                    }
+
+                    .combined__aside,
+                    .combined__body ~ .combined__aside {
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+
+                    > .combined__aside,
+                    > .combined__body {
+                        white-space: normal;
+
+                        &::before {
+                            display: block;
+                        }
+
+                        &:first-child::before {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+

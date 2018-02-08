@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/// Set gutter for each combined model defined within $combined-models
+///
+/// @param { List } $combined-models
+///     List to iterate from
+
+@mixin combined-gutters(
+    $list: $combined-models
+) {
+    @if $combined-models {
+        @each $combined-model, $list in $combined-models {
+            .combined#{get-css-modifier($combined-model)} {
+                > .combined__aside {
+                    padding-right: combined-model($combined-model, 'padding');
+                }
+
+                > .combined__body ~ .combined__aside {
+                    padding-right: 0;
+                    padding-left: combined-model($combined-model, 'padding');
+                }
+
+                > .combined__body,
+                > .combined__aside {
+                    &:before {
+                        height: combined-model($combined-model, 'padding');
+                    }
+                }
+            }
+        }
+    }
+}

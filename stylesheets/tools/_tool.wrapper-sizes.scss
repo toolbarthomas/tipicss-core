@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+/// Generate sizes for .wrapper classes defined within $wrapper-models
+///
+/// @param { List } $combined-models
+///     List to iterate from
+
+
+@mixin wrapper-sizes(
+    $list: $wrapper-models
+) {
+    @if $wrapper-models {
+        @each $wrapper-model, $list in $wrapper-models {
+            .wrapper#{get-css-modifier($wrapper-model)} {
+                @if wrapper-model($wrapper-model, 'padding') {
+                    padding: wrapper-model($wrapper-model, 'padding');
+                }
+
+                @if wrapper-model($wrapper-model, 'max-width') {
+                    max-width: wrapper-model($wrapper-model, 'max-width');
+                }
+            }
+        }
+    }
+}
+

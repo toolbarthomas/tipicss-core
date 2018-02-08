@@ -1,18 +1,10 @@
-.wrapper {
-    margin-left: auto;
-    margin-right: auto;
-}
+@if get-setting($tipicss, 'objects', 'wrapper') {
 
-@each $wrapper-model, $list in $wrapper-models {
-
-    .wrapper#{get-css-modifier($wrapper-model)} {
-        @if wrapper-model($wrapper-model, 'padding') {
-            padding: wrapper-model($wrapper-model, 'padding');
-        }
-
-        @if wrapper-model($wrapper-model, 'max-width') {
-            max-width: wrapper-model($wrapper-model, 'max-width');
-        }
+    .wrapper {
+        margin-left: auto;
+        margin-right: auto;
     }
+
+    @include wrapper-sizes($wrapper-models);
 
 }

@@ -1,0 +1,79 @@
+body {
+    @include typography-model('default');
+}
+
+#{$display1} {
+    @include typography-model('display1');
+}
+
+#{$display2} {
+    @include typography-model('display2');
+}
+
+#{$display3} {
+    @include typography-model('display3');
+}
+
+#{$h1} {
+    @include typography-model('h1');
+}
+
+#{$h2} {
+    @include typography-model('h2');
+}
+
+#{$h3} {
+    @include typography-model('h3');
+}
+
+#{$h4} {
+    @include typography-model('h4');
+}
+
+#{$h5} {
+    @include typography-model('h5');
+}
+
+#{$h6} {
+    @include typography-model('h6');
+}
+
+#{$base-leads} {
+    @include typography-model('base-leads');
+}
+
+#{$base-elements} {
+    @include typography-model('base-elements');
+}
+
+#{$quotations} {
+    @include typography-model('quotations');
+}
+
+#{$list-items} {
+    @include typography-model('list-items');
+}
+
+#{$description-titles} {
+    @include typography-model('description-titles');
+}
+
+#{$description-items} {
+    @include typography-model('description-items');
+}
+
+#{$anchors} {
+    @include typography-model('anchors');
+}
+
+#{$linebreaks} {
+    @include typography-model('linebreaks');
+}
+
+#{$italics} {
+    font-style: italic;
+}
+
+#{$bolds} {
+    font-weight: bolder;
+}

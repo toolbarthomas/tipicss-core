@@ -1,27 +1,29 @@
-.valign {
-    display: table;
-    width: 100%;
-    height: 100%;
-    table-layout: fixed;
-    line-height: normal;
-}
-
-.valign__body {
-    display: table-cell;
-    height: 100%;
-    width: 100%;
-    line-height: inherit;
-    vertical-align: middle;
-
-    .valign--top > & {
-        vertical-align: top;
+@if get-setting($tipicss, 'objects', 'valign') {
+    .valign {
+        display: table;
+        width: 100%;
+        height: 100%;
+        table-layout: fixed;
+        line-height: normal;
     }
 
-    .valign--bottom > & {
-        vertical-align: bottom;
-    }
+    .valign__body {
+        display: table-cell;
+        height: 100%;
+        width: 100%;
+        line-height: inherit;
+        vertical-align: middle;
 
-    .valign--baseline > & {
-        vertical-align: baseline;
+        .valign--top > & {
+            vertical-align: top;
+        }
+
+        .valign--bottom > & {
+            vertical-align: bottom;
+        }
+
+        .valign--baseline > & {
+            vertical-align: baseline;
+        }
     }
 }

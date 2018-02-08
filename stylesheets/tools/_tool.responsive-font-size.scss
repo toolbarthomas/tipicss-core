@@ -33,9 +33,9 @@
         $font-size-found: false;
 
         /// Prevent adding extra values if the length of $responsive_font_sizes is smaller than the givin $font_sizes
-        @if $i < length($font-sizes) {
+        @if $i < length($responsive-font-sizes) {
             /// Compare if the current font size is present within our default font sizes
-            @each $variant in map-keys(map-get($font-sizes, 'smartphone'))
+            @each $variant in map-keys(map-get($responsive-font-sizes, 'smartphone'))
             {
                 @if $variant == $size
                 {
@@ -57,12 +57,12 @@
     $i: 1;
 
     /// Output each size for each viewport we have defined within the $font-sizes list
-    @each $font-size in $font-sizes {
+    @each $font-size in $responsive-font-sizes {
         /// Get our breakpoint keyname.
-        $specific-breakpoint: nth(map-keys($font-sizes), $i);
+        $specific-breakpoint: nth(map-keys($responsive-font-sizes), $i);
 
         /// Set the font size for the current breakpoint.
-        $specific-font-size: map-get(map-get($font-sizes, $specific-breakpoint), nth($defined-sizes, $i));
+        $specific-font-size: map-get(map-get($responsive-font-sizes, $specific-breakpoint), nth($defined-sizes, $i));
 
         /// Don't output a font-size if have no valid font-size and breakpoint specified.
         @if $specific-breakpoint != null and $specific-font-size != null

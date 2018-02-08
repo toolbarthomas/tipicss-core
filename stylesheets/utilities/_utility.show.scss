@@ -1,4 +1,4 @@
-@if get-setting($tipicss, 'css-helpers', 'show') {
+@if get-setting($tipicss, 'utilities', 'show') {
 
     @include css-helper('.show') {
         display: block !important;

@@ -1,4 +1,4 @@
-@if get-setting($tipicss, 'css-helpers', 'visually-hidden') {
+@if get-setting($tipicss, 'utilities', 'visually-hidden') {
 
     @include css-helper('.hide') {
         border: 0 !important;

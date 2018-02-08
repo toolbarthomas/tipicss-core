@@ -5,18 +5,18 @@
 /// @param { String } $type
 ///     Specify the type defined in $wrapper-models.
 ///
-/// @param { String } $size
+/// @param { String } $property
 ///     The value to return from the specified $wrappers
 ///
 /// @return { Value }
 
 @function wrapper-model(
     $type: false,
-    $size: false
+    $property: false
 )
 {
-    @if ($type != false) and ($size != false)
+    @if ($type != false) and ($property != false)
     {
-        @return get-setting($wrapper-models, $type, $size);
+        @return get-setting($wrapper-models, $type, $property);
     }
 }

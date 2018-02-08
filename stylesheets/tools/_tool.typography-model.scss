@@ -1,0 +1,75 @@
+@mixin typography-model($model) {
+
+    @if typography-model($model, 'color') {
+        color: color(
+            nth(typography-model($model, 'color'), 1),
+            nth(typography-model($model, 'color'), 2)
+        );
+    }
+
+    @if typography-model($model, 'font-size') {
+        @include responsive-font-size(typography-model($model, 'font-size'));
+    }
+
+    @if typography-model($model, 'font-family') {
+        font-family: typography-model($model, 'font-family');
+    }
+
+    @if typography-model($model, 'font-weight') {
+        font-weight: typography-model($model, 'font-weight');
+    }
+
+    @if typography-model($model, 'font-style') {
+        font-style: typography-model($model, 'font-style');
+    }
+
+    @if typography-model($model, 'font-ligatures') == false {
+        -moz-font-feature-settings: "liga" 0;
+        -ms-font-feature-settings: "liga" 0;
+        -o-font-feature-settings: "liga" 0;
+        -webkit-font-feature-settings: "liga" 0;
+        font-feature-settings: "liga" 0;
+        -webkit-font-variant-ligatures: none;
+        font-variant-ligatures: none;
+    } @else {
+        -moz-font-feature-settings: "liga" typography-model($model, 'font-ligatures');
+        -ms-font-feature-settings: "liga" typography-model($model, 'font-ligatures');
+        -o-font-feature-settings: "liga" typography-model($model, 'font-ligatures');
+        -webkit-font-feature-settings: "liga" typography-model($model, 'font-ligatures');
+        font-feature-settings: "liga" typography-model($model, 'font-ligatures');
+        -webkit-font-variant-ligatures: typography-model($model, 'font-ligatures');
+        font-variant-ligatures: typography-model($model, 'font-ligatures');
+    }
+
+    @if typography-model($model, 'line-height') {
+        line-height: typography-model($model, 'line-height');
+    }
+
+    @if typography-model($model, 'letter-spacing') {
+        letter-spacing: typography-model($model, 'letter-spacing');
+    }
+
+    @if typography-model($model, 'text-transform') {
+        text-transform: typography-model($model, 'text-transform');
+    }
+
+    @if typography-model($model, 'font-smoothing') == true {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    @if typography-model($model, 'margin') {
+        margin: typography-model($model, 'margin');
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+
+
+}

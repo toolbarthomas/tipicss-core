@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/// Alias shorthand to get a box-model value.
+/// Alias shorthand to get a typography-model value.
 ///
 /// @param { String } $type
 ///     Specify the type defined in $box-models.
@@ -10,13 +10,13 @@
 ///
 /// @return { Value }
 
-@function box-model(
+@function typography-model(
     $type: false,
     $property: false
 )
 {
     @if ($type != false) and ($property != false)
     {
-        @return get-setting($box-models, $type, $property);
+        @return get-setting($typography-models, $type, $property);
     }
 }
