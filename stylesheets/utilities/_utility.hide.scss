@@ -1,0 +1,7 @@
+@if get-setting($tipicss, 'css-helpers', 'hide') {
+
+    @include css-helper('.hide') {
+        display: none !important;
+    };
+
+}
