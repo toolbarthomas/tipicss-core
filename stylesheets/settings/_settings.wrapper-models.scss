@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+$wrapper-models: (
+    'default': (
+        'padding': (0 16px),
+        'max-width': 1200px
+    ),
+    'compact': (
+        'padding': false,
+        'max-width': 640px
+    )
+) !default;

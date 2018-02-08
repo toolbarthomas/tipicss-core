@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/// Alias shorthand to get a combined-model value.
+///
+/// @param { String } $type
+///     Specify the type defined in $combined-models.
+///
+/// @param { String } $size
+///     The value to return from the specified model
+///
+/// @return { Value }
+
+@function combined-model(
+    $type: false,
+    $size: false
+)
+{
+    @if ($type != false) and ($size != false)
+    {
+        @return get-setting($combined-models, $type, $size);
+    }
+}

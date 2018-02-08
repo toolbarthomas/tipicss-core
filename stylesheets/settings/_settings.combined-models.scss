@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+$combined-models: (
+    'default': (
+        'padding': 20px,
+    ),
+    'no-gutter': (
+        'padding': 0
+    )
+) !default;

@@ -1,0 +1,95 @@
+.combined {
+    width: 100%;
+    height: 100%;
+    display: table;
+	line-height: normal;
+}
+
+.combined__body,
+.combined__aside {
+    display: table-cell;
+    line-height: inherit;
+    vertical-align: top;
+    height: 100%;
+
+    .combined--middle > & {
+        vertical-align: middle;
+    }
+
+    .combined--bottom > & {
+        vertical-align: bottom;
+    }
+
+    &::before {
+        display: none;
+        content: " ";
+        line-height: 1;
+        overflow: hidden;
+    }
+}
+
+.combined__aside {
+    width: 1%;
+    white-space: nowrap;
+}
+
+/// Generate horizontal & vertical (for reset class) gutter properties for each combined-model.
+@each $combined-model, $list in $combined-models {
+
+    .combined#{get-css-modifier($combined-model)} {
+        > .combined__aside {
+            padding-right: combined-model($combined-model, 'padding');
+        }
+
+        > .combined__body ~ .combined__aside {
+            padding-right: 0;
+            padding-left: combined-model($combined-model, 'padding');
+        }
+
+        > .combined__body,
+        > .combined__aside {
+            &:before {
+                height: combined-model($combined-model, 'padding');
+            }
+        }
+    }
+
+}
+
+/// Generate reset classes for each viewport, i.e. smartphone, phablet etc..
+@each $viewport, $list in $viewports {
+
+    @include breakpoint(
+        $min-width: map-get($list, 'min-width'),
+        $max-width: map-get($list, 'max-width')
+    ) {
+        .combined.combined--reset-#{$viewport} {
+            &,
+            & > .combined__body,
+            & > .combined__aside {
+                display: block;
+                width: auto;
+                height: auto;
+            }
+
+            .combined__aside,
+            .combined__body ~ .combined__aside {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            > .combined__aside,
+            > .combined__body {
+                white-space: normal;
+
+                &::before {
+                    display: block;
+                }
+
+                &:first-child::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}

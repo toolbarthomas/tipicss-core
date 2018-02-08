@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/// Returns suffix as string for class modiefiers
+///
+/// @param { String } $name
+///     Name to check
+///
+/// @return { Value }
+
+@function get-css-modifier(
+    $name
+) {
+    $suffix: '--' + $name;
+
+    @if $name == 'default' {
+        $suffix: '';
+    }
+
+    @return $suffix;
+}
