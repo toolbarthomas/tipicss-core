@@ -1,6 +1,6 @@
 {
   "name": "tipicss-core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
@@ -8,6 +8,11 @@
       "version": "2.0.1",
       "resolved": "https://registry.npmjs.org/fg-loadcss/-/fg-loadcss-2.0.1.tgz",
       "integrity": "sha512-gFtSJjMMt9it0OhXz4wJQT46/LFUrJ2Db6U/fLtwClBEMEEjmVPSWSYrbGCyFwy47Cd4ULOpR+HSWXVkUKciaQ=="
+    },
+    "svg-sprite-injector": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/svg-sprite-injector/-/svg-sprite-injector-1.0.0.tgz",
+      "integrity": "sha1-HzXxbZqJtueaKW2GFlT5OZLcDI4="
     }
   }
 }

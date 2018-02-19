@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/toolbarthomas/tipicss-core#readme",
   "dependencies": {
-    "fg-loadcss": "^2.0.1"
+    "fg-loadcss": "^2.0.1",
+    "svg-sprite-injector": "^1.0.0"
   }
 }

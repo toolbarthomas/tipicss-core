@@ -1,0 +1,7 @@
+<script>
+    {% include 'tipicss_packages::/tipicss-core/node_modules/svg-sprite-injector/svg-sprite-injector.js' %}
+
+    svgSpriteInjector("{{ svg_sprite|default('/main/images/layout/svg-sprite.svg') }}", {
+        revision: "{{ revision|default('now'|date('Y-m-d--H:i:s')) }}"
+    });
+</script>
