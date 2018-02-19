@@ -1,0 +1,22 @@
+{
+  "name": "tipicss-core",
+  "version": "0.2.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://toolbarthomas@github.com/toolbarthomas/tipicss-core.git"
+  },
+  "author": "Thomas van der Velde",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toolbarthomas/tipicss-core/issues"
+  },
+  "homepage": "https://github.com/toolbarthomas/tipicss-core#readme",
+  "dependencies": {
+    "fg-loadcss": "^2.0.1"
+  }
+}

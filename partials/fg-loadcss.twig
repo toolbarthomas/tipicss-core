@@ -1,0 +1,12 @@
+{% if stylesheets is not empty %}
+
+    {% for stylesheet in stylesheets %}
+        <link rel="preload" href="{{ stylesheet }}" as="style" onload="null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="{{ stylesheet }}" type="text/css"></noscript>
+    {% endfor %}
+
+    {% if include_javascript is same as(true) %}
+        <script>{% include "tipicss_packages/tipicss-core/node_modules/fg-loadcss/dist/cssrelpreload.min.js" %}</script>
+    {% endif %}
+
+{% endif %}
