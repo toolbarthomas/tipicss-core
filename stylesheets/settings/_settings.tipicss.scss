@@ -13,6 +13,7 @@ $tipicss: (
         'visually-hidden': false,
     ),
     'objects': ( // Enable/disable modules from the objects layer. You should disable unused css helpers since this tool will generate utility classes for each viewport.
+        'columns': true,
         'combined': true,
         'sticky-end': true,
         'valign': true,

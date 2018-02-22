@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+/// Generate models for .columns component, each model is defined within $columns-models
+///
+/// @param { List } $columns-models
+///     List to iterate from
+
+
+@mixin columns-models(
+    $list: $columns-models
+) {
+    @if $list {
+        @each $columns-model, $item in $list {
+            .columns#{get-css-modifier($columns-model)} {
+
+                $column_count: columns-model($columns-model, 'column_count');
+                $responsive_variants: columns-model($columns-model, 'responsive_variants');
+                $enable_offset: columns-model($columns-model, 'enable_offset');
+                $enable_push: columns-model($columns-model, 'enable_push');
+                $enable_pull: columns-model($columns-model, 'enable_pull');
+
+                @if $column_count and $responsive_variants {
+
+                    // Set equal widths for .column within .columns
+                     &.columns--autowidth {
+                        > div {
+                            @for $i from 1 through $column-count {
+                                &-#{$i} {
+                                    width: ( 100% / $column-count ) * $i;
+                                }
+                            }
+                        }
+                    }
+
+                    @each $responsive_variant in $responsive_variants {
+
+                        $column_classname: map-get($responsive_variant, 'column_classname');
+                        $offset_classname: map-get($responsive_variant, 'offset_classname');
+                        $push_classname: map-get($responsive_variant, 'push_classname');
+                        $pull_classname: map-get($responsive_variant, 'pull_classname');
+                        $viewport: map-get($responsive_variant, 'viewport');
+                        $gutter: map-get($responsive_variant, 'gutter');
+
+                        @if $viewport {
+                            @include breakpoint(viewport($viewport, 'min-width')) {
+
+                                @if $gutter {
+                                    margin-left: 0 - $gutter;
+                                    width: calc(100% + #{$gutter});
+
+                                    > div {
+                                        padding-left: $gutter;
+                                    }
+
+                                    & + & {
+                                        margin-top: $gutter;
+                                    }
+                                }
+
+                                @for $i from 1 through $column-count {
+
+                                    @if $column_classname {
+                                        > .#{$column_classname} {
+                                            &-#{$i} {
+                                                width: ( 100% / $column-count ) * $i;
+                                            }
+                                        }
+                                    }
+
+                                    @if $offset_classname and $enable_offset {
+                                        > .#{$offset_classname} {
+                                            &-#{$i} {
+                                                margin-left: ( 100% / $column-count ) * $i;
+                                            }
+                                        }
+                                    }
+
+                                    @if $enable_push and $push_classname {
+                                        > .#{$push_classname} {
+                                            &-#{$i} {
+                                                left: ( 100% / $column-count ) * $i;
+                                            }
+                                        }
+                                    }
+
+                                    @if $enable_pull and $pull_classname {
+                                        > .#{$pull_classname} {
+                                            &-#{$i} {
+                                                left: 0 - ( 100% / $column-count ) * $i;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

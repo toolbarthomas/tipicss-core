@@ -1,0 +1,50 @@
+$columns-models: (
+    'default': (
+        'column_count': 12,
+        'enable_offset': true, // Enable/disable offset classes for this grid setup
+        'enable_push': true, // Enable/disable push classes for this grid setup
+        'enable_pull': true, // Enable/disable pull classes for this grid setup
+        'responsive_variants': (
+            (
+                'column_classname': 'col',
+                'offset_classname': 'offset',
+                'push_classname': 'push',
+                'pull_classname': 'pull',
+                'viewport': 'smartphone',
+                'gutter': 10px
+            ),
+            (
+                'column_classname': 'col-p',
+                'offset_classname': 'offset-p',
+                'push_classname': 'push-p',
+                'pull_classname': 'pull-p',
+                'viewport': 'phablet',
+                'gutter': false
+            ),
+            (
+                'column_classname': 'col-t',
+                'offset_classname': 'offset-t',
+                'push_classname': 'push-t',
+                'pull_classname': 'pull-t',
+                'viewport': 'tablet',
+                'gutter': false
+            ),
+            (
+                'column_classname': 'col-d',
+                'offset_classname': 'offset-d',
+                'push_classname': 'push-d',
+                'pull_classname': 'pull-d',
+                'viewport': 'desktop',
+                'gutter': 20px
+            ),
+            (
+                'column_classname': 'col-w',
+                'offset_classname': 'offset-w',
+                'push_classname': 'push-w',
+                'pull_classname': 'pull-w',
+                'viewport': 'widescreen',
+                'gutter': false
+            )
+        )
+    )
+) !default;

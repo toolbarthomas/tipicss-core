@@ -24,6 +24,8 @@
                 > .combined__aside {
                     &:before {
                         height: combined-model($combined-model, 'padding');
+                        padding: box-model('padding', 'small');
+                        padding: get-setting($box-models, 'padding', 'small');
                     }
                 }
             }

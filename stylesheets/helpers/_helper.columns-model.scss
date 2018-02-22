@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/// Alias shorthand to get a columns-model value.
+///
+/// @param { String } $type
+///     Specify the type defined in $box-models.
+///
+/// @param { String } $option
+///     The value to return from the specified $box-model
+///
+/// @return { Value }
+
+@function columns-model(
+    $type: false,
+    $option: false
+)
+{
+    @if ($type != false) and ($option != false)
+    {
+        @return get-setting($columns-models, $type, $option);
+    }
+}

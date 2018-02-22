@@ -1,12 +1,10 @@
 @charset "UTF-8";
 
 $smartphone-viewport:         0 !default;
-$phablet-viewport:            400px !default;
-$tablet-viewport:             640px !default;
-$tablet-landscape-viewport:   960px !default;
-$desktop-viewport:            1025px !default;
+$phablet-viewport:            540px !default;
+$tablet-viewport:             768px !default;
+$desktop-viewport:            1024px !default;
 $widescreen-viewport:         1200px !default;
-$highroller-viewport:         1500px !default;
 
 $viewports: (
     'smartphone' : (
@@ -19,10 +17,6 @@ $viewports: (
     ),
     'tablet' : (
         'min-width' : $tablet-viewport,
-        'max-width' : ( $tablet-landscape-viewport - 1 )
-    ),
-    'tablet-landscape' : (
-        'min-width' : $tablet-landscape-viewport,
         'max-width' : ( $desktop-viewport - 1 )
     ),
     'desktop' : (
@@ -31,10 +25,6 @@ $viewports: (
     ),
     'widescreen' : (
         'min-width' : $widescreen-viewport,
-        'max-width' : ( $highroller-viewport - 1 )
-    ),
-    'highroller' : (
-        'min-width' : $highroller-viewport,
         'max-width' : false
     )
 ) !default;
