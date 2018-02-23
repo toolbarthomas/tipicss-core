@@ -1,9 +1,9 @@
 $columns-models: (
     'default': (
         'column_count': 12,
-        'enable_offset': true, // Enable/disable offset classes for this grid setup
-        'enable_push': true, // Enable/disable push classes for this grid setup
-        'enable_pull': true, // Enable/disable pull classes for this grid setup
+        'enable_offset': true, // Enable/disable offset classes for this columns model
+        'enable_push': true, // Enable/disable push classes for this columns model
+        'enable_pull': true, // Enable/disable pull classes for this columns model
         'responsive_variants': (
             (
                 'column_classname': 'col',

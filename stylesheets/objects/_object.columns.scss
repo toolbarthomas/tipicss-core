@@ -8,7 +8,7 @@
 		width: 100%;
         word-spacing: 0; // Reset word spacing inherited from ancestor elements
 
-        > div {
+        > * {
             vertical-align: top;
             display: inline-block;
             width: 100%;
@@ -34,15 +34,15 @@
         direction: rtl;
     }
 
-    .columns--left {
+    .columns--align-left {
         text-align: left;
     }
 
-    .columns--right {
+    .columns--align-right {
         text-align: right;
     }
 
-    .columns--center {
+    .columns--align-center {
         text-align: center;
     }
 

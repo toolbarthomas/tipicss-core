@@ -23,10 +23,12 @@
 
                     // Set equal widths for .column within .columns
                      &.columns--autowidth {
-                        > div {
+                        > * {
                             @for $i from 1 through $column-count {
-                                &-#{$i} {
-                                    width: ( 100% / $column-count ) * $i;
+
+                                &:first-child:nth-last-child(#{$i}),
+                                &:first-child:nth-last-child(#{$i}) ~ * {
+                                    width: ( 100% / $i );
                                 }
                             }
                         }
@@ -48,7 +50,7 @@
                                     margin-left: 0 - $gutter;
                                     width: calc(100% + #{$gutter});
 
-                                    > div {
+                                    > * {
                                         padding-left: $gutter;
                                     }
 
