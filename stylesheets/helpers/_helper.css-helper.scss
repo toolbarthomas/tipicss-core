@@ -10,26 +10,31 @@
 @mixin css-helper(
     $selector: null
 ) {
+    #{$selector} {
+        @content;
+    }
+
+    // Index value we use for our viewports iteration
+    $i: 0;
+
     @each $viewport, $list in $viewports {
         $viewport-min-width: 0;
         $viewport-max-width: 0;
-
-        #{$selector} {
-            @content;
-        }
 
         @if ($viewport) {
             $viewport-min-width: viewport($viewport, 'min-width');
             $viewport-max-width: viewport($viewport, 'max-width');
 
-            $selector: ($selector + '--' + $viewport);
+            $selector_combined: ($selector + '--' + $viewport);
 
-            /// $viewport and smaller
-            @include breakpoint(
-                $max-width: $viewport-max-width
-            ) {
-                #{$selector + '-and-smaller' } {
-                    @content;
+            @if $i > 0 {
+                /// $viewport and smaller
+                @include breakpoint(
+                    $max-width: $viewport-max-width
+                ) {
+                    #{$selector_combined + '-and-smaller' } {
+                        @content;
+                    }
                 }
             }
 
@@ -38,19 +43,23 @@
                 $min-width: $viewport-min-width,
                 $max-width: $viewport-max-width
             ) {
-                #{$selector} {
+                #{$selector_combined} {
                     @content;
                 }
             }
 
-            /// $viewport and larger
-            @include breakpoint(
-                $min-width: viewport($viewport, 'min-width')
-            ) {
-                #{$selector + '-and-larger'} {
-                    @content;
+             @if $i < ( length($viewports) - 1 )  {
+                /// $viewport and larger
+                @include breakpoint(
+                    $min-width: viewport($viewport, 'min-width')
+                ) {
+                    #{$selector_combined + '-and-larger'} {
+                        @content;
+                    }
                 }
             }
         }
+
+        $i: $i + 1;
     }
 }
