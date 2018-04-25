@@ -7,35 +7,83 @@ $font-elements: (
         'display3' : '.display3'
     ),
     'headings' : (
-        'h1' : ('h1', '.h1'),
-        'h2' : ('h2', '.h2'),
-        'h3' : ('h3', '.h3'),
-        'h4' : ('h4', '.h4'),
-        'h5' : ('h5', '.h5'),
-        'h6' : ('h6', '.h6')
+        'h1' : (
+            'h1',
+            '.h1'
+        ),
+        'h2' : (
+            'h2',
+            '.h2'
+        ),
+        'h3' : (
+            'h3',
+            '.h3'
+        ),
+        'h4' : (
+            'h4',
+            '.h4'
+        ),
+        'h5' : (
+            'h5',
+            '.h5'
+        ),
+        'h6' : (
+            'h6',
+            '.h6'
+        )
     ),
     'leads' : (
         'base' : ('.lead')
     ),
     'elements' : (
-        'base' : ('p', 'address', 'ul', 'dl', 'ol', 'small'),
-        'quotations' : ('blockquote', 'q'),
-        'list-items' : ('li'),
-        'description-titles' : ('dt'),
-        'description-items' : ('dd'),
-        'anchors' : ('a'),
-        'linebreaks' : ('hr')
+        'base' : (
+            'p',
+            'address',
+            'ul',
+            'dl',
+            'ol',
+            'small'
+        ),
+        'quotations' : (
+            'blockquote',
+            'q'
+        ),
+        'list-items' : (
+            'li'
+        ),
+        'description-titles' : (
+            'dt'
+        ),
+        'description-items' : (
+            'dd'
+        ),
+        'anchors' : (
+            'a'
+        ),
+        'linebreaks' : (
+            'hr'
+        )
     ),
     'formats' : (
-        'bolds' : ('b', 'strong', '.bold'),
-        'italics' : ('i', 'em', '.italic', 'dfn')
+        'bolds' : (
+            'b',
+            'strong'
+        ),
+        'italics' : (
+            'i',
+            'em'
+        )
     )
 ) !default;
 
 $display1: font-element('displays', 'display1') !default;
 $display2: font-element('displays', 'display2') !default;
 $display3: font-element('displays', 'display3') !default;
-$displays: ($display1, $display2, $display3) !default;
+$displays: (
+    $display1,
+    $display2,
+    $display3
+) !default;
 
 $h1: font-element('headings', 'h1') !default;
 $h2: font-element('headings', 'h2') !default;
@@ -43,7 +91,14 @@ $h3: font-element('headings', 'h3') !default;
 $h4: font-element('headings', 'h4') !default;
 $h5: font-element('headings', 'h5') !default;
 $h6: font-element('headings', 'h6') !default;
-$headings: ($h1, $h2, $h3, $h4, $h5, $h6) !default;
+$headings: (
+    $h1,
+    $h2,
+    $h3,
+    $h4,
+    $h5,
+    $h6
+) !default;
 
 $base-leads: font-element('leads', 'base') !default;
 $base-elements: font-element('elements', 'base') !default;

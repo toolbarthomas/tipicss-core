@@ -1,6 +1,6 @@
 @if get-setting($tipicss, 'utilities', 'visually-hidden') {
 
-    @include css-helper('.hide') {
+    @include css-helper('.visually-hidden') {
         border: 0 !important;
         clip: rect(0 0 0 0) !important;
         clip-path: inset(50%) !important;
